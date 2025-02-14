@@ -1,0 +1,3 @@
+Refers to frequency counters as using objects or sets to collect values/frequencies of values like in the same frequency problem 
+this is good to avoid nested loops or O(n^2) operations with arrays/strings
+

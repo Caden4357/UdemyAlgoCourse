@@ -1,0 +1,19 @@
+What stable means: 
+In the context of sorting algorithms, such as bubble sort, insertion sort, and selection sort, "stable" refers to the behavior of the algorithm when it encounters elements with equal values.
+
+A sorting algorithm is considered stable if it maintains the relative order of elements with equal values after sorting. In other words, if there are two elements with the same value, the stable sorting algorithm will ensure that the element that appears first in the original list will also appear first in the sorted list.
+
+For example, let's say we have a list of objects with two properties: "value" and "index". If we sort the list based on the "value" property using a stable sorting algorithm, the elements with equal values will be sorted based on their original order (the "index" property). This ensures that the relative order of elements with equal values is preserved.
+
+On the other hand, an unstable sorting algorithm may change the relative order of elements with equal values during the sorting process. This means that the final sorted list may not maintain the original order of elements with equal values.
+
+The stability of a sorting algorithm can be important in certain scenarios, especially when sorting complex data structures or when the original order of equal elements needs to be preserved.
+
+Bubble Sort: time complexity best case - O(n) - average case - O(n^2) - worst case - O(n^2) - space complexity - O(1) - stable
+Insertion Sort: time complexity best case - O(n) - average case - O(n^2) - worst case - O(n^2) - space complexity - O(1) - stable
+Selection Sort: time complexity best case - O(n^2) - average case - O(n^2) - worst case - O(n^2) - space complexity - O(1) - not stable
+
+these are known as quadratic time complexity algorithms, which means that the time complexity grows quadratically with the size of the input. This can make them inefficient for large datasets, as the number of comparisons and swaps increases significantly as the input size grows.
+But if a list nearly sorted, bubble sort and insertion sort can be efficient.
+
+sorting algorithms visual representation: https://www.toptal.com/developers/sorting-algorithms

@@ -1,0 +1,3 @@
+Big O Cheat Sheet: https://www.bigocheatsheet.com/
+merge sort is O(n log n) The n is number of comparisions if I have an array of 1000 items I have 1000 comparisions the log n is the decompositions if I have an array of 32 items I have 5 decompositions (splits) before they are all split into single element arrays
+
