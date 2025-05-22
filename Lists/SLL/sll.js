@@ -189,3 +189,5 @@ sll.push(71);
 // console.log(sll.remove(2));
 console.log(sll.reverse2());
 console.log(sll.display());
+
+
