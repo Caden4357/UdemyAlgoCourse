@@ -1,0 +1,18 @@
+Big O Of SLL:
+Insertion - O(1)
+Removal - it depends. If removing the head -> O(1) if removing the tail -> O(n)
+searching - O(n)
+access - O(n)
+
+SLL excel when Insertion and deletion from the beginning are frequently required 
+arrays contain a built in index LL do not 
+
+Big O DLL:
+Insertion: o(1)
+removal: O(1)
+searching: O(N) even if its O(N/2) that still simplifies to O(N)
+access: O(N)
+
+Recap:
+DLL are just like SLL theres just that extra pointer (prev)
+DLL are better for searching they do take up more memory because of the extra pointer 

@@ -1,0 +1,9 @@
+Stacks and queues are abstract data structures that have to abide by certain rules 
+Stacks have to abide by LIFO (last in first out) push and pop operations on a stack should be constant time
+Queues have to abide by FIFO (first in first out)
+
+Big O of queues 
+insertion - O(1);
+removal - O(1)
+searching - O(N)
+access - O(N)

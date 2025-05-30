@@ -1,7 +1,0 @@
-Insertion - 0(1)
-Removal - it depends. If removing the head -> 0(1) if removing the tail -> 0(n)
-searching - 0(n)
-access - 0(n)
-
-SLL excel when Insertion and deletion from the beginning are frequently required 
-arrays contain a built in index LL do not 
