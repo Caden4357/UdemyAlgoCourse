@@ -38,29 +38,22 @@ var BST = /** @class */ (function () {
         }
     };
     BST.prototype.find = function (value) {
-        if (!this.root) {
-            return false;
-        }
         var runner = this.root;
-        while (true) {
+        while (runner !== null) {
             if (value === runner.value) {
-                return true;
-            }
-            else if (value > runner.value) {
-                if (!runner.right) {
-                    return false;
-                }
-                runner = runner.right;
+                return runner;
             }
             else if (value < runner.value) {
-                if (!runner.left) {
-                    return false;
-                }
                 runner = runner.left;
             }
-            else
-                return false;
+            else {
+                runner = runner.right;
+            }
         }
+        return null;
+    };
+    BST.prototype.contains = function (value) {
+        return this.find(value) !== null;
     };
     return BST;
 }());
@@ -68,5 +61,5 @@ var tree = new BST();
 tree.insert(20);
 tree.insert(18);
 tree.insert(21);
-console.log(tree.find(212));
+console.log(tree.contains(18));
 // console.log(tree.insert(18));

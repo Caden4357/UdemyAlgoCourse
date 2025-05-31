@@ -1,0 +1,4 @@
+insertion - O(log n)
+searching - O(log n)
+* both not guaranteed * because you can have really ugly trees that are still valid bst's that resemble more of a linked list or sorted array
+as the tree grows, as it doubles the number of operations/steps only increases by 1 this is all ONLY for BST's

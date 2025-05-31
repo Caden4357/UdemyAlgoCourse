@@ -41,27 +41,22 @@ class BST {
             }
         }
     }
-    find(value: number) {
-        if (!this.root) {
-            return false;
-        }
+    find(value: number): CustomNode | null {
         let runner = this.root;
-        while(runner !== null){
-            if(value === runner.value){
-                return true;
-            } else if(value > runner.value){
-                if(!runner.right){
-                    return false;
-                }
-                runner = runner.right
-            } else if(value < runner.value){
-                if(!runner.left){
-                    return false;
-                }
+
+        while (runner !== null) {
+            if (value === runner.value) {
+                return runner;
+            } else if (value < runner.value) {
                 runner = runner.left;
+            } else {
+                runner = runner.right;
             }
         }
-        return false;
+        return null;
+    }
+    contains(value: number): boolean {
+        return this.find(value) !== null;
     }
 }
 
@@ -69,5 +64,5 @@ let tree = new BST();
 tree.insert(20);
 tree.insert(18);
 tree.insert(21);
-console.log(tree.find(212));
+console.log(tree.contains(18));
 // console.log(tree.insert(18));
