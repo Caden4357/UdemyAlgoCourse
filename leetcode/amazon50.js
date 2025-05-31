@@ -52,7 +52,7 @@ var maximumUnits = function (boxTypes, truckSize) {
     }
     return maxUnits;
 };
-console.log(maximumUnits([[1,3],[2,2],[3,1]], 4));
+console.log(maximumUnits([[1, 3], [2, 2], [3, 1]], 4));
 
 // https://leetcode.com/problems/find-triangular-sum-of-an-array/description/?envType=problem-list-v2&envId=7p5x763&sorting=W3sic29ydE9yZGVyIjoiREVTQ0VORElORyIsIm9yZGVyQnkiOiJGUkVRVUVOQ1kifV0%3D&page=1
 
@@ -65,14 +65,14 @@ console.log(maximumUnits([[1,3],[2,2],[3,1]], 4));
 // Replace the array nums with newNums.
 // Repeat the entire process starting from step 1.
 // Return the triangular sum of nums.
-var triangularSum = function(nums) {
+var triangularSum = function (nums) {
     // keep track of the length of the array and do a while loop until it reaches 1 
     let len = nums.length;
-    while(len > 1){
+    while (len > 1) {
         let newArray = [];
-        for(let i = 0; i < nums.length-1; i++){
-            let sumNum = nums[i] + nums[i+1];
-            if(sumNum > 9){
+        for (let i = 0; i < nums.length - 1; i++) {
+            let sumNum = nums[i] + nums[i + 1];
+            if (sumNum > 9) {
                 sumNum -= 10;
             }
             newArray.push(sumNum);
@@ -82,4 +82,45 @@ var triangularSum = function(nums) {
     }
     return nums;
 };
-console.log(triangularSum([1,2,3,4,5]));
+console.log(triangularSum([1, 2, 3, 4, 5]));
+
+// Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+// Input: strs = ["eat","tea","tan","ate","nat","bat"]
+
+// Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+var groupAnagrams = function (strs) {
+    let hashmap = {};
+    for (let i = 0; i < strs.length; i++) {
+        let sortedWord = strs[i].split('').sort().join('');
+        if (hashmap[sortedWord]) {
+            hashmap[sortedWord].push(strs[i]);
+        } else {
+            hashmap[sortedWord] = [strs[i]];
+        }
+    }
+
+    // Return all grouped anagrams
+    return Object.values(hashmap);
+};
+
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// Given a string s, rearrange the characters of s so that any two adjacent characters are not the same.
+
+// Return any possible rearrangement of s or return "" if not possible.
+
+var subArrayRanges = function (nums) {
+    let sum = 0;
+    for (let start = 0; start < nums.length; start++) {
+        for (let end = start; end < nums.length; end++) {
+            let subarray = nums.slice(start, end + 1);
+            console.log(subarray);
+            let min = Math.min(...subarray);
+            let max = Math.max(...subarray);
+            sum += max - min;
+        }
+    }
+    return sum;
+};
+
+console.log(subArrayRanges([1,2,3]));

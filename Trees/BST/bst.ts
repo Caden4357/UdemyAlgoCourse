@@ -41,10 +41,33 @@ class BST {
             }
         }
     }
+    find(value: number) {
+        if (!this.root) {
+            return false;
+        }
+        let runner = this.root;
+        while(runner !== null){
+            if(value === runner.value){
+                return true;
+            } else if(value > runner.value){
+                if(!runner.right){
+                    return false;
+                }
+                runner = runner.right
+            } else if(value < runner.value){
+                if(!runner.left){
+                    return false;
+                }
+                runner = runner.left;
+            }
+        }
+        return false;
+    }
 }
 
 let tree = new BST();
 tree.insert(20);
-tree.insert(20);
+tree.insert(18);
 tree.insert(21);
-console.log(tree.insert(18));
+console.log(tree.find(212));
+// console.log(tree.insert(18));
