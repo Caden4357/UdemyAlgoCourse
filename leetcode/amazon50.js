@@ -121,6 +121,6 @@ var subArrayRanges = function (nums) {
         }
     }
     return sum;
-};
+}; 
 
 console.log(subArrayRanges([1,2,3]));
