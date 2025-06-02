@@ -58,6 +58,36 @@ class BST {
     contains(value: number): boolean {
         return this.find(value) !== null;
     }
+    removeRoot(): boolean {
+        // if bst is empty return false 
+        if (!this.root) {
+            return false;
+        }
+        if (this.root.left && !this.root.right) {
+            this.root = this.root.left;
+            return true;
+        }
+        if (!this.root.left && this.root.right) {
+            this.root = this.root.right;
+            return true;
+        }
+        if (!this.root.left && !this.root.right) {
+            this.root = null;
+            return true;
+        }
+        if (this.root.left && this.root.right) {
+            let tempLeft = this.root.left;
+            this.root = this.root.right;
+            let current = this.root;
+            while (current.left) {
+                current = current.left;
+            }
+            current.left = tempLeft;
+            return true;
+        }
+        return false;
+
+    }
 }
 
 let tree = new BST();
